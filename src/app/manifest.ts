@@ -5,11 +5,11 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "AgentBNB",
     short_name: "AgentBNB",
     description:
-      "AI hospitality operations stack for Airbnb-like properties.",
+      "Property-aware AI operations for short-stay rentals.",
     start_url: "/",
     display: "standalone",
-    background_color: "#f6f1e8",
-    theme_color: "#596b4d",
+    background_color: "#f6ead7",
+    theme_color: "#41533a",
     icons: [
       {
         src: "/brand/agentbnb-icon.png",
