@@ -88,16 +88,6 @@ img {
   overflow: hidden;
 }
 
-.landing-shell::before {
-  content: "";
-  position: absolute;
-  inset: 13px;
-  z-index: -1;
-  border: 1px solid rgba(29, 35, 28, 0.055);
-  border-radius: 6px;
-  pointer-events: none;
-}
-
 .landing-shell::after {
   display: none;
 }
@@ -1105,10 +1095,6 @@ h1 {
     min-height: 100vh;
     border-radius: 8px;
     padding: 16px;
-  }
-
-  .landing-shell::before {
-    inset: 8px;
   }
 
   .topline {

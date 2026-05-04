@@ -245,7 +245,7 @@ export function InquiryPaths() {
                       target="_blank"
                       rel="noreferrer"
                     >
-                      Book a Call
+                      Book a Call Instead
                     </a>
                   </div>
 

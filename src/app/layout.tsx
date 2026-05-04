@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://agent-bnb.com"),
+  metadataBase: new URL("https://www.agent-bnb.com"),
   title: {
     default: "AgentBNB - AI hospitality operations for short-stay properties",
     template: "%s | AgentBNB",
@@ -42,14 +42,14 @@ export const metadata: Metadata = {
     title: "AgentBNB - AI hospitality operations for short-stay properties",
     description:
       "A white-label operations stack for short-stay properties with an AI agent, direct booking site, owner dashboard, source of record, and approval-gated workflows.",
-    url: "https://agent-bnb.com",
+    url: "https://www.agent-bnb.com",
     siteName: "AgentBNB",
     images: [
       {
-        url: "/screenshots/agent-recommendation.jpg",
-        width: 960,
-        height: 600,
-        alt: "AgentBNB agent recommendation workflow",
+        url: "/opengraph-image",
+        width: 1200,
+        height: 630,
+        alt: "AgentBNB AI hospitality operations stack",
       },
     ],
     locale: "en_US",
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: "AgentBNB - AI hospitality operations for short-stay properties",
     description:
       "White-label stack for AI-assisted short-stay property operations, built from the Balay Pansol and Gideon workflow.",
-    images: ["/screenshots/agent-recommendation.jpg"],
+    images: ["/opengraph-image"],
   },
   alternates: {
     canonical: "/",
