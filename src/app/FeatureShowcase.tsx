@@ -12,33 +12,29 @@ import {
 const stackFeatures = [
   {
     id: "agent",
-    title: "AI hospitality agent",
+    title: "AI Hospitality Agent",
     body: "Inquiry triage, guest messaging, owner recommendations, and controlled booking progression.",
-    reference: "Reference: agent thread with an owner approval recommendation.",
     image: "/screenshots/agent-recommendation.jpg",
     icon: Sparkles,
   },
   {
     id: "sor",
-    title: "Property SoR",
+    title: "Property System of Record (SoR)",
     body: "Markdown operating truth for amenities, rules, rates, scripts, limitations, and agent context.",
-    reference: "Reference: human-readable property truth used by the agent.",
     image: "/screenshots/agentbnb-system-of-record.png",
     icon: BookOpenCheck,
   },
   {
     id: "site",
-    title: "White-label site",
+    title: "White-label Site",
     body: "Direct booking page, owner dashboard, spreadsheet records, Resend email, and guest review loop.",
-    reference: "Reference: direct booking and admin surface from the running stack.",
     image: "/screenshots/white-label-site.jpg",
     icon: ClipboardCheck,
   },
   {
     id: "harnesses",
-    title: "Ops harnesses",
+    title: "New Features Regularly",
     body: "Growing harness tools for the agent to continuously optimize and keep your property competitive.",
-    reference: "Reference: pricing and operations harness for competitive tuning.",
     image: "/screenshots/agentbnb-market-pricing-harness.png",
     icon: ShieldCheck,
   },
@@ -48,7 +44,6 @@ export function FeatureShowcase() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [paused, setPaused] = useState(false);
   const activeFeature = stackFeatures[activeIndex];
-  const ActiveIcon = activeFeature.icon;
 
   useEffect(() => {
     if (paused || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
@@ -69,14 +64,6 @@ export function FeatureShowcase() {
         <span data-copy-id="stack.context">--</span>
       </div>
 
-      <div className="stack-flow" aria-label="AgentBNB operating flow">
-        <span>Guest</span>
-        <span>Agent</span>
-        <span>Owner</span>
-        <span>Staff</span>
-        <span>Records</span>
-      </div>
-
       <div
         className="feature-showcase"
         onMouseEnter={() => setPaused(true)}
@@ -94,12 +81,6 @@ export function FeatureShowcase() {
               priority
             />
           </div>
-          <figcaption>
-            <ActiveIcon aria-hidden="true" size={16} />
-            <span data-copy-id={`features.${activeFeature.id}.reference`}>
-              {activeFeature.reference}
-            </span>
-          </figcaption>
         </figure>
 
         <div className="feature-list" aria-label="Select a featured capability">
