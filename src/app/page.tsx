@@ -2,10 +2,9 @@ import Image from "next/image";
 import { CopyEditor } from "./CopyEditor";
 import { FeatureShowcase } from "./FeatureShowcase";
 import {
+  ArrowUpRight,
   GitFork,
   Handshake,
-  Layers3,
-  Mail,
 } from "lucide-react";
 
 const repoUrl = "https://github.com/joe-josue/AgentBNB";
@@ -139,67 +138,55 @@ export default function Home() {
               AgentBNB is a white-label hospitality operations stack for running
               Airbnb-like properties with an AI agent.
             </p>
-            <p className="origin" data-copy-id="hero.origin">
-              Born from Balay Pansol, a real family-run short-stay property, and
-              Gideon, the hospitality agent that operate its it digital stack.
-            </p>
-            <p className="operator-note" data-copy-id="hero.operatorNote">
-              SAVE HUNDREDS OF DOLLARS IN OPEX AND TIME. The Base Monthly
-              Operating Cost of the running AgentBNB $50USD/MO
-            </p>
-            <div className="hero-actions" aria-label="AgentBNB actions">
-              <a className="button primary" href="#stack">
-                <Layers3 aria-hidden="true" size={17} />
-                <span data-copy-id="hero.cta.primary">Tour the operating stack</span>
-              </a>
-              <a className="button secondary" href={contactUrl}>
-                <Mail aria-hidden="true" size={17} />
-                <span data-copy-id="hero.cta.secondary">Paid implementation check</span>
-              </a>
+            <div className="proof-lines">
+              <p className="origin" data-copy-id="hero.origin">
+                Born from Balay Pansol, a real family-run short-stay property, and
+                Gideon, the hospitality agent that operate its it digital stack.
+              </p>
+              <p className="operator-note" data-copy-id="hero.operatorNote">
+                SAVE HUNDREDS OF DOLLARS IN OPEX AND TIME. The Base Monthly
+                Operating Cost of the running AgentBNB $50USD/MO
+              </p>
+            </div>
+            <div className="path-grid" id="paths" aria-label="Explore AgentBNB">
+              {paths.map((path) => {
+                const Icon = path.icon;
+
+                return (
+                  <a
+                    className="path-card"
+                    href={path.href}
+                    key={path.title}
+                    target={path.href.startsWith("http") ? "_blank" : undefined}
+                    rel={path.href.startsWith("http") ? "noreferrer" : undefined}
+                  >
+                    <div className="path-meta">
+                      <span data-copy-id={`paths.${path.id}.label`}>
+                        {path.label}
+                      </span>
+                      <Icon aria-hidden="true" size={15} />
+                    </div>
+                    <h2 data-copy-id={`paths.${path.id}.title`}>
+                      {path.title}
+                    </h2>
+                    <p data-copy-id={`paths.${path.id}.body`}>
+                      {path.body}
+                    </p>
+                    <span className="card-link">
+                      <span data-copy-id={`paths.${path.id}.cta`}>
+                        {path.cta}
+                      </span>
+                      <ArrowUpRight aria-hidden="true" size={14} />
+                    </span>
+                  </a>
+                );
+              })}
             </div>
           </div>
 
-          <aside className="case-board" id="stack" aria-label="Current AgentBNB stack">
-            <div className="board-heading">
-              <span data-copy-id="stack.kicker">FEATURED CAPABILITIES</span>
-              <span data-copy-id="stack.context">--</span>
-            </div>
+          <aside className="hero-stack" aria-label="Current AgentBNB stack">
             <FeatureShowcase />
           </aside>
-        </div>
-
-        <div className="path-grid" id="paths" aria-label="Explore AgentBNB">
-          {paths.map((path) => {
-            const Icon = path.icon;
-
-            return (
-              <a
-                className="path-card"
-                href={path.href}
-                key={path.title}
-                target={path.href.startsWith("http") ? "_blank" : undefined}
-                rel={path.href.startsWith("http") ? "noreferrer" : undefined}
-              >
-                <div className="path-meta">
-                  <span data-copy-id={`paths.${path.id}.label`}>
-                    {path.label}
-                  </span>
-                  <span className="card-link">
-                    <span data-copy-id={`paths.${path.id}.cta`}>
-                      {path.cta}
-                    </span>
-                    <Icon aria-hidden="true" size={15} />
-                  </span>
-                </div>
-                <h2 data-copy-id={`paths.${path.id}.title`}>
-                  {path.title}
-                </h2>
-                <p data-copy-id={`paths.${path.id}.body`}>
-                  {path.body}
-                </p>
-              </a>
-            );
-          })}
         </div>
       </section>
       {process.env.NODE_ENV === "development" ? <CopyEditor /> : null}
