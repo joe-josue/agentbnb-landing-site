@@ -1,71 +1,35 @@
 import Image from "next/image";
+import { CopyEditor } from "./CopyEditor";
+import { FeatureShowcase } from "./FeatureShowcase";
 import {
-  BookOpenCheck,
-  ClipboardCheck,
   GitFork,
   Handshake,
   Layers3,
   Mail,
-  ShieldCheck,
-  Sparkles,
 } from "lucide-react";
 
 const repoUrl = "https://github.com/joe-josue/AgentBNB";
-const pricingHarnessUrl = "https://github.com/joe-josue/agentbnb-pricing-harness";
 const contactUrl =
   "mailto:mail@joejosue.com?subject=AgentBNB%20implementation%20advisory";
 
 const paths = [
   {
-    label: "01",
-    title: "Implement the OSS stack",
-    body: "Fork the starter and adapt the Balay Pansol pattern. Star it if useful; future modules may become paid if demand grows without OSS support.",
-    href: repoUrl,
-    cta: "Open GitHub",
-    icon: GitFork,
-  },
-  {
-    label: "02",
-    title: "Paid advisory / fit check",
-    body: "A focused review of property fit, stack scope, approvals, staff handoff, data channels, and launch order.",
+    id: "advisory",
+    label: "Implementation",
+    title: "Inquire for Assisted Setup & Advisory",
+    body: "Accepting white-glove and curated setup for serious operators looking to apply AgentBNB to their properties. Email at mail@joejosue.com",
     href: contactUrl,
-    cta: "Email for advisory",
+    cta: "Custom Implementation",
     icon: Handshake,
   },
   {
-    label: "03",
-    title: "Tour the current stack",
-    body: "Scan the agent, system of record, direct booking/admin site, and pricing or operations harnesses.",
-    href: "#stack",
-    cta: "See stack",
-    icon: Layers3,
-  },
-];
-
-const stackFeatures = [
-  {
-    title: "AI hospitality agent",
-    body: "Inquiry triage, guest messaging, owner recommendations, and controlled booking progression.",
-    image: "/screenshots/agent-recommendation.jpg",
-    icon: Sparkles,
-  },
-  {
-    title: "Property SoR",
-    body: "Markdown operating truth for amenities, rules, rates, scripts, limitations, and agent context.",
-    image: "/screenshots/agentbnb-system-of-record.png",
-    icon: BookOpenCheck,
-  },
-  {
-    title: "White-label site",
-    body: "Direct booking page, owner dashboard, Google Sheets records, Resend email, and review loop.",
-    image: "/screenshots/white-label-site.jpg",
-    icon: ClipboardCheck,
-  },
-  {
-    title: "Ops harnesses",
-    body: "Pricing and operations lanes that help the agent recommend changes without hiding the owner.",
-    image: "/screenshots/agentbnb-market-pricing-harness.png",
-    icon: ShieldCheck,
+    id: "stack-tour",
+    label: "Open source",
+    title: "Run the Stack, Contribute, Donate.",
+    body: "AgentBNB runs an open source component shared from real implementation. Savvy users can run the stack themselves, developers are open to contribute, and donating to allow continuous development goes a long way.",
+    href: repoUrl,
+    cta: "Open Source",
+    icon: GitFork,
   },
 ];
 
@@ -77,7 +41,7 @@ const jsonLd = {
       name: "AgentBNB",
       url: "https://agent-bnb.com",
       description:
-        "AgentBNB is an open-source landing and documentation surface for a white-label AI hospitality operations stack.",
+        "AgentBNB presents a white-label AI hospitality operations stack for short-stay property owners and property managers.",
       publisher: {
         "@type": "Person",
         name: "Joe Josue",
@@ -103,6 +67,11 @@ const jsonLd = {
       areaServed: "Worldwide",
       serviceType:
         "Paid implementation advisory and property fitness checks for AI-assisted hospitality operations stacks.",
+      audience: [
+        "Independent short-stay property owners",
+        "Vacation rental operators",
+        "Property managers with multiple rentals",
+      ],
     },
     {
       "@type": "FAQPage",
@@ -144,9 +113,9 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <section className="landing-shell" aria-labelledby="agentbnb-title">
+      <section className="landing-shell" id="top" aria-labelledby="agentbnb-title">
         <header className="topline">
-          <a className="mark" href={repoUrl} target="_blank" rel="noreferrer">
+          <a className="mark" href="#top">
             <Image
               src="/brand/agentbnb-icon.png"
               alt="AgentBNB logo"
@@ -154,85 +123,52 @@ export default function Home() {
               height={42}
               priority
             />
-            <span>AgentBNB</span>
+            <span data-copy-id="brand.name">AgentBNB</span>
           </a>
-          <nav aria-label="Primary">
-            <a href={repoUrl} target="_blank" rel="noreferrer">
-              GitHub
-            </a>
-            <a href={pricingHarnessUrl} target="_blank" rel="noreferrer">
-              Harness
-            </a>
-            <a href={contactUrl}>Advisory</a>
-          </nav>
         </header>
 
         <div className="hero-grid">
           <div className="hero-copy">
-            <p className="eyebrow">OSS hospitality operations stack</p>
-            <h1 id="agentbnb-title">
-              AI-assisted ops for Airbnb-style properties.
-            </h1>
-            <p className="definition">
-              AgentBNB is a white-label hospitality operations stack for running
-              Airbnb-like properties with an AI agent, direct booking site,
-              owner dashboard, and property system of record.
+            <p className="eyebrow" data-copy-id="hero.eyebrow">
+              AI hospitality operations stack
             </p>
-            <p className="origin">
+            <h1 id="agentbnb-title" data-copy-id="hero.title">
+              Operate Airbnb-style properties with an AI-Agent
+            </h1>
+            <p className="definition" data-copy-id="hero.definition">
+              AgentBNB is a white-label hospitality operations stack for running
+              Airbnb-like properties with an AI agent.
+            </p>
+            <p className="origin" data-copy-id="hero.origin">
               Born from Balay Pansol, a real family-run short-stay property, and
-              Gideon, the hospitality agent that helps operate its digital stack.
+              Gideon, the hospitality agent that operate its it digital stack.
+            </p>
+            <p className="operator-note" data-copy-id="hero.operatorNote">
+              SAVE HUNDREDS OF DOLLARS IN OPEX AND TIME. The Base Monthly
+              Operating Cost of the running AgentBNB $50USD/MO
             </p>
             <div className="hero-actions" aria-label="AgentBNB actions">
-              <a className="button primary" href={repoUrl} target="_blank" rel="noreferrer">
-                <GitFork aria-hidden="true" size={17} />
-                Star / fork on GitHub
+              <a className="button primary" href="#stack">
+                <Layers3 aria-hidden="true" size={17} />
+                <span data-copy-id="hero.cta.primary">Tour the operating stack</span>
               </a>
               <a className="button secondary" href={contactUrl}>
                 <Mail aria-hidden="true" size={17} />
-                Paid implementation check
+                <span data-copy-id="hero.cta.secondary">Paid implementation check</span>
               </a>
             </div>
           </div>
 
           <aside className="case-board" id="stack" aria-label="Current AgentBNB stack">
             <div className="board-heading">
-              <span>Current stack</span>
-              <span>Balay Pansol pattern</span>
+              <span data-copy-id="stack.kicker">FEATURED CAPABILITIES</span>
+              <span data-copy-id="stack.context">--</span>
             </div>
-            <div className="image-study">
-              <Image
-                src="/screenshots/agent-recommendation.jpg"
-                alt="AgentBNB agent recommendation workflow for owner approval"
-                width={1280}
-                height={720}
-                priority
-              />
-            </div>
-            <div className="feature-grid">
-              {stackFeatures.map((feature) => {
-                const Icon = feature.icon;
-
-                return (
-                  <article className="feature-tile" key={feature.title}>
-                    <Image
-                      src={feature.image}
-                      alt={`${feature.title} screenshot from AgentBNB`}
-                      width={320}
-                      height={180}
-                    />
-                    <div>
-                      <Icon aria-hidden="true" size={15} />
-                      <h2>{feature.title}</h2>
-                      <p>{feature.body}</p>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
+            <FeatureShowcase />
           </aside>
         </div>
 
-        <div className="path-grid" aria-label="Explore AgentBNB">
+        <div className="path-grid" id="paths" aria-label="Explore AgentBNB">
           {paths.map((path) => {
             const Icon = path.icon;
 
@@ -245,19 +181,28 @@ export default function Home() {
                 rel={path.href.startsWith("http") ? "noreferrer" : undefined}
               >
                 <div className="path-meta">
-                  <span>{path.label}</span>
+                  <span data-copy-id={`paths.${path.id}.label`}>
+                    {path.label}
+                  </span>
                   <span className="card-link">
-                    {path.cta}
+                    <span data-copy-id={`paths.${path.id}.cta`}>
+                      {path.cta}
+                    </span>
                     <Icon aria-hidden="true" size={15} />
                   </span>
                 </div>
-                <h2>{path.title}</h2>
-                <p>{path.body}</p>
+                <h2 data-copy-id={`paths.${path.id}.title`}>
+                  {path.title}
+                </h2>
+                <p data-copy-id={`paths.${path.id}.body`}>
+                  {path.body}
+                </p>
               </a>
             );
           })}
         </div>
       </section>
+      {process.env.NODE_ENV === "development" ? <CopyEditor /> : null}
     </main>
   );
 }

@@ -15,11 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL("https://agent-bnb.com"),
   title: {
-    default: "AgentBNB - AI hospitality operations for Airbnb-like properties",
+    default: "AgentBNB - AI hospitality operations for short-stay properties",
     template: "%s | AgentBNB",
   },
   description:
-    "AgentBNB is a white-label hospitality operations stack for running Airbnb-like properties with an AI agent, direct booking site, owner dashboard, property system of record, and owner approval loop.",
+    "AgentBNB is a white-label hospitality operations stack for short-stay property owners and managers, with an AI agent, direct booking site, owner dashboard, property system of record, and approval loop.",
   applicationName: "AgentBNB",
   authors: [{ name: "Joe Josue", url: "https://joejosue.com" }],
   creator: "Joe Josue",
@@ -29,6 +29,8 @@ export const metadata: Metadata = {
     "AI hospitality agent",
     "Airbnb operations software",
     "short stay property automation",
+    "vacation rental operations software",
+    "property manager operations system",
     "direct booking website",
     "open source hospitality stack",
     "property management AI agent",
@@ -37,9 +39,9 @@ export const metadata: Metadata = {
     "Gideon AI agent",
   ],
   openGraph: {
-    title: "AgentBNB - AI hospitality operations for Airbnb-like properties",
+    title: "AgentBNB - AI hospitality operations for short-stay properties",
     description:
-      "A white-label operations stack for Airbnb-like properties with an AI agent, direct booking site, owner dashboard, source of record, and approval-gated workflows.",
+      "A white-label operations stack for short-stay properties with an AI agent, direct booking site, owner dashboard, source of record, and approval-gated workflows.",
     url: "https://agent-bnb.com",
     siteName: "AgentBNB",
     images: [
@@ -55,9 +57,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AgentBNB - AI hospitality operations for Airbnb-like properties",
+    title: "AgentBNB - AI hospitality operations for short-stay properties",
     description:
-      "White-label stack for AI-assisted short-stay property operations, born from the Balay Pansol and Gideon workflow.",
+      "White-label stack for AI-assisted short-stay property operations, built from the Balay Pansol and Gideon workflow.",
     images: ["/screenshots/agent-recommendation.jpg"],
   },
   alternates: {
