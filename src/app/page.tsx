@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import { CopyEditor } from "./CopyEditor";
 import { FeatureShowcase } from "./FeatureShowcase";
 import { InquiryPaths } from "./InquiryPaths";
@@ -97,6 +98,9 @@ export default function Home() {
             />
             <span data-copy-id="brand.name">AgentBNB</span>
           </a>
+          <nav className="topnav" aria-label="AgentBNB site navigation">
+            <Link href="/version-history">Version history</Link>
+          </nav>
         </header>
 
         <div className="hero-grid">

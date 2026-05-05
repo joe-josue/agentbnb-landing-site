@@ -18,6 +18,7 @@ Content rules:
 - Ground copy in the OSS repo and Balay Pansol/Gideon reference implementation.
 - Do not publish private Balay Pansol guest data, staff details, credentials, sheet IDs, or family-specific operations.
 - Frame AgentBNB as an OSS extraction and replication starter, not as a fully automated production SaaS.
+- Public versioning starts at `v0.1.0` on `2026-05-04`; do not backfill pre-announcement work into later historical version numbers.
 - Keep the desktop page compact enough to work as a one-screen architecture/design-agency composition; mobile may scroll naturally.
 - Maintain the three user paths: implement the OSS stack, inquire for paid advisory, and tour the current stack.
 - Keep owner approval, staff handoff, property SoR, Google Sheets, Resend, Next.js, Vercel, and OpenClaw-style agent runtime visible where relevant.
@@ -28,3 +29,5 @@ Implementation rules:
 - Keep this project deployable separately from the OSS repo.
 - Maintain search surfaces: metadata, canonical URL, `robots.ts`, `sitemap.ts`, and JSON-LD.
 - Prefer source-backed page copy over speculative roadmap claims.
+- Mirror version-history content from `/Users/joejosue/AhensyaHQ/projects/AgentBNB/docs/version-history.json` into `src/content/version-history.json`; run `npm run check:version-history` before release.
+- Do not deploy or push the site live as loose polish when it is part of an AgentBNB release. Consolidate local work, brief Joe with the proposed version and shipped changes, and release only after approval.
